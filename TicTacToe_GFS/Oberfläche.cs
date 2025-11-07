@@ -8,12 +8,26 @@ namespace TicTacToe_GFS
     public class Oberfläche : Form
     {
         private Steuerung _steuerung; // Variable für die Assoziation
+        private Label _lblSpielerInfo;
 
         public Oberfläche(Steuerung pSteuerung)
         {
             _steuerung = pSteuerung; // Speichere die übergebene Steuerung
             this.KeyPreview = true; // Ermöglicht Tastatur-Events für das Form
             this.KeyDown += Oberflaeche_KeyDown; // Tastatur-Event hinzufügen
+            
+            // Ein Label für Spielerinfo
+            _lblSpielerInfo = new Label
+            {
+                Text = $"Spieler '{_steuerung.ermittleAktSpieler()}' beginnt",
+                Location = new Point(400, 50),
+                Size = new Size(300, 30),
+                Font = new Font("Arial", 12)
+            };
+            this.Controls.Add(_lblSpielerInfo);
+            
+            this.ClientSize = new Size(800, 400); // Größeres Format
+            
         }
         
         
@@ -119,6 +133,7 @@ namespace TicTacToe_GFS
             Button btn = this.Controls.Find($"btnCell{pNr}", true).FirstOrDefault() as Button;
             if (btn != null)
             {
+                btn.UseVisualStyleBackColor = false;
                 btn.Text = pAktSpieler.ToString();
             }
         }
@@ -129,5 +144,9 @@ namespace TicTacToe_GFS
             ErstelleCellButtons();
         }
 
+        public void ausgabeText(string pText)
+        {
+            _lblSpielerInfo.Text = pText;
+        }
     }
 }

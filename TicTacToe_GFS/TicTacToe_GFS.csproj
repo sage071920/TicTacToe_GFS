@@ -52,6 +52,9 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Statistik.cs" />
         <Compile Include="Steuerung.cs" />
+        <EmbeddedResource Include="Oberfläche.resx">
+          <DependentUpon>Oberfläche.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>

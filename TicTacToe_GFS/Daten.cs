@@ -20,8 +20,5 @@ namespace TicTacToe_GFS
                 return false;
             }
         }
-
-
-
     }
 }
