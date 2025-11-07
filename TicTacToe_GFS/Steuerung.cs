@@ -4,7 +4,7 @@ namespace TicTacToe_GFS
 {
     public class Steuerung
     {
-        private Oberfläche _dieGui;
+        public Oberfläche _dieGui;
         private Daten _dieDaten;
         private Statistik _dieStatistik;
         
@@ -13,6 +13,7 @@ namespace TicTacToe_GFS
         public Steuerung()
         {
             _dieGui = new Oberfläche(this); // Erstelle Oberfläche und übergib this als Parameter
+            _dieGui.InitOberfläche();
             _dieDaten = new Daten();
             _dieStatistik = new Statistik();
         }
@@ -51,5 +52,7 @@ namespace TicTacToe_GFS
                 _aktSpieler = (_aktSpieler == 'X') ? 'O' : 'X';
             }
         }
+        
+        
     }
 }
