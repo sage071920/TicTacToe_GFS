@@ -7,8 +7,8 @@ namespace TicTacToe_GFS
 {
     public class Oberfläche : Form
     {
-        private Steuerung _steuerung; // Variable für die Assoziation
-        private Label _lblSpielerInfo;
+        private readonly Steuerung _steuerung; // Variable für die Assoziation
+        private readonly Label _lblSpielerInfo;
 
         public Oberfläche(Steuerung pSteuerung)
         {
@@ -33,9 +33,9 @@ namespace TicTacToe_GFS
         
         private void ErstelleCellButtons()
         {
-            int startX = 38;
-            int startY = 48;
-            int spacing = 90;
+            const int startX = 38;
+            const int startY = 48;
+            const int spacing = 90;
             int index = 1;
 
             for (int row = 0; row < 3; row++)
